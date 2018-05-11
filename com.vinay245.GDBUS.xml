@@ -1,0 +1,8 @@
+<node>
+    <interface name="com.vinay245.GDBUS">
+        <method name="HelloClient">
+            <arg name="greeting" direction="in" type="s"/>
+            <arg name="response" direction="out" type="s"/>
+        </method>
+    </interface>
+</node>
