@@ -2,11 +2,11 @@
 
 FLAGS=$(shell pkg-config --libs --cflags gio-2.0 gio-unix-2.0 glib-2.0)
 all: server client client2
-server: server.o minminbus.o
+server: server.o minminbus.o vinay245bus.o
 	gcc -o $@ $^ $(FLAGS)
 client: client.o minminbus.o
 	gcc -o $@ $^ $(FLAGS)
-client2: client2.o minminbus.o
+client2: client2.o minminbus.o vinay245bus.o
 	gcc -o $@ $^ $(FLAGS)
 server.o: server.c
 	gcc -o $@ $^ -c $(FLAGS)
@@ -15,6 +15,8 @@ client.o: client.c
 client2.o: client2.c
 	gcc -o $@ $^ -c $(FLAGS)
 minminbus.o: minminbus.c
+	gcc -o $@ $^ -c $(FLAGS)
+vinay245bus.o: vinay245bus.c
 	gcc -o $@ $^ -c $(FLAGS)
 
 clean:
